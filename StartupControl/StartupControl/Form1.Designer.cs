@@ -122,6 +122,7 @@
 			this.target.SmallChange = 5;
 			this.target.TabIndex = 9;
 			this.target.TickFrequency = 5;
+			this.target.Scroll += new System.EventHandler(this.target_Scroll);
 			// 
 			// loadPath
 			// 
@@ -133,6 +134,7 @@
 			this.loadPath.TabIndex = 12;
 			this.loadPath.TabStop = true;
 			this.loadPath.Text = "So what happens when we have a really long url?";
+			this.loadPath.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.loadPath_LinkClicked);
 			// 
 			// selectFile
 			// 

@@ -18,7 +18,7 @@ namespace StartupControl
 		Timer timer = new Timer();
 
 		const float FInterval = 0.05f;
-		const string FFilename = "StartupControl.save";
+		const string FSettingsFilename = "StartupControl.save";
 		float FTotalTime = 10.0f;
 		float FProgress = 0;
 
@@ -40,6 +40,14 @@ namespace StartupControl
 			Close();
 		}
 
+		string Path
+		{
+			get
+			{
+				return loadPath.Text;
+			}
+		}
+
 		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
 		{
 			if (keyData == Keys.Escape)
@@ -50,6 +58,11 @@ namespace StartupControl
 		private void Start()
 		{
 			timer.Stop();
+			if (loadPath.Text != "")
+			{
+				Process.Start(loadPath.Text);
+				Close();
+			}
 			MessageBox.Show("Starting application");
 		}
 		
@@ -110,7 +123,7 @@ namespace StartupControl
 		{
 			try
 			{
-				StreamWriter OutFile = new StreamWriter(FFilename);
+				StreamWriter OutFile = new StreamWriter(FSettingsFilename);
 				OutFile.WriteLine(loadPath.Text);
 				OutFile.WriteLine(target.Value);
 				OutFile.Close();
@@ -125,7 +138,7 @@ namespace StartupControl
 		{
 			try
 			{
-				StreamReader InFile = new StreamReader(FFilename);
+				StreamReader InFile = new StreamReader(FSettingsFilename);
 				loadPath.Text = InFile.ReadLine();
 				target.Value = System.Convert.ToInt32(InFile.ReadLine());
 				InFile.Close();
@@ -140,6 +153,17 @@ namespace StartupControl
 				target.Value = 0;
 			else if (target.Value > 100)
 				target.Value = 100;
+		}
+
+		private void target_Scroll(object sender, EventArgs e)
+		{
+			SaveSettings();
+		}
+
+		private void loadPath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			if (Path != "")
+				Process.Start("explorer.exe", "/select," + loadPath.Text);
 		}
 	}
 }
