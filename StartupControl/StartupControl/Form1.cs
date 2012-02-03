@@ -104,7 +104,11 @@ namespace StartupControl
 			}
 			float progress = FProgress / FTotalTime;
 			progressBar.Value = (int)(100.0f * progress);
-			this.Text = "Starting in " + ((int)Math.Ceiling(FTotalTime - FProgress)).ToString() + "s";
+
+			if (millis > 0)
+				this.Text = "Starting in " + ((int)Math.Ceiling(FTotalTime - FProgress)).ToString() + "s";
+			else
+				this.Text = "Waiting for CPU load to drop below " + target.Value + "%";
 		}
 
 		private void button1_Click(object sender, EventArgs e)

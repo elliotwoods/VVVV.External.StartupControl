@@ -45,7 +45,7 @@
 			// 
 			// cancel
 			// 
-			this.cancel.Location = new System.Drawing.Point(12, 241);
+			this.cancel.Location = new System.Drawing.Point(12, 188);
 			this.cancel.Name = "cancel";
 			this.cancel.Size = new System.Drawing.Size(260, 77);
 			this.cancel.TabIndex = 0;
@@ -55,7 +55,7 @@
 			// 
 			// start
 			// 
-			this.start.Location = new System.Drawing.Point(214, 181);
+			this.start.Location = new System.Drawing.Point(214, 128);
 			this.start.Name = "start";
 			this.start.Size = new System.Drawing.Size(58, 54);
 			this.start.TabIndex = 1;
@@ -65,7 +65,7 @@
 			// 
 			// progressBar
 			// 
-			this.progressBar.Location = new System.Drawing.Point(12, 181);
+			this.progressBar.Location = new System.Drawing.Point(12, 128);
 			this.progressBar.Name = "progressBar";
 			this.progressBar.Size = new System.Drawing.Size(196, 54);
 			this.progressBar.TabIndex = 2;
@@ -76,7 +76,7 @@
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.cpuUsage);
 			this.groupBox1.Controls.Add(this.target);
-			this.groupBox1.Location = new System.Drawing.Point(12, 98);
+			this.groupBox1.Location = new System.Drawing.Point(12, 45);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(260, 77);
 			this.groupBox1.TabIndex = 7;
@@ -127,7 +127,7 @@
 			// loadPath
 			// 
 			this.loadPath.AutoEllipsis = true;
-			this.loadPath.Location = new System.Drawing.Point(12, 61);
+			this.loadPath.Location = new System.Drawing.Point(12, 8);
 			this.loadPath.Name = "loadPath";
 			this.loadPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.loadPath.Size = new System.Drawing.Size(218, 29);
@@ -138,7 +138,7 @@
 			// 
 			// selectFile
 			// 
-			this.selectFile.Location = new System.Drawing.Point(214, 61);
+			this.selectFile.Location = new System.Drawing.Point(214, 8);
 			this.selectFile.Name = "selectFile";
 			this.selectFile.Size = new System.Drawing.Size(56, 31);
 			this.selectFile.TabIndex = 13;
@@ -154,7 +154,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 330);
+			this.ClientSize = new System.Drawing.Size(284, 271);
 			this.Controls.Add(this.selectFile);
 			this.Controls.Add(this.loadPath);
 			this.Controls.Add(this.groupBox1);
