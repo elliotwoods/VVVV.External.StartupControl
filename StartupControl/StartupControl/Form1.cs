@@ -19,7 +19,7 @@ namespace StartupControl
 
 		const float FInterval = 0.05f;
 		const string FSettingsFilename = "StartupControl.save";
-		float FTotalTime = 2.0f;
+		float FTotalTime = 10.0f;
 		float FProgress = 0;
 
 		public Form1()
@@ -104,12 +104,13 @@ namespace StartupControl
 				Start();
 			}
 			float progress = FProgress / FTotalTime;
-			progressBar.Value = (int)(100.0f * progress);
+			progressBar.Value = (int)Math.Ceiling(100.0f * progress);
 
 			if (millis > 0)
 				this.Text = "Starting in " + ((int)Math.Ceiling(FTotalTime - FProgress)).ToString() + "s";
 			else
 				this.Text = "Waiting for CPU load to drop below " + target.Value + "%";
+				
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -122,6 +123,7 @@ namespace StartupControl
 			selectFileDialog.ShowDialog();
 			loadPath.Text = selectFileDialog.FileName;
 			SaveSettings();
+			FProgress = 0.0f;
 		}
 
 		void SaveSettings()
