@@ -130,7 +130,7 @@
 			this.loadPath.Location = new System.Drawing.Point(12, 8);
 			this.loadPath.Name = "loadPath";
 			this.loadPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.loadPath.Size = new System.Drawing.Size(218, 29);
+			this.loadPath.Size = new System.Drawing.Size(196, 29);
 			this.loadPath.TabIndex = 12;
 			this.loadPath.TabStop = true;
 			this.loadPath.Text = "So what happens when we have a really long url?";
