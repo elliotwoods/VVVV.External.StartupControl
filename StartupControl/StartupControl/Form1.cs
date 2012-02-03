@@ -19,7 +19,7 @@ namespace StartupControl
 
 		const float FInterval = 0.05f;
 		const string FSettingsFilename = "StartupControl.save";
-		float FTotalTime = 10.0f;
+		float FTotalTime = 2.0f;
 		float FProgress = 0;
 
 		public Form1()
@@ -33,6 +33,8 @@ namespace StartupControl
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			LoadSettings();
+			if (Path == "" || !File.Exists(Path))
+				SelectFile();
 		}
 
 		private void cancel_Click(object sender, EventArgs e)
@@ -63,7 +65,6 @@ namespace StartupControl
 				Process.Start(loadPath.Text);
 				Close();
 			}
-			MessageBox.Show("Starting application");
 		}
 		
 		private void Close()
