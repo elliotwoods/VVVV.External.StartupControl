@@ -1,4 +1,4 @@
-(https://github.com/elliotwoods/VVVV.External.StartupControl/raw/master/Screenshot.png "Screenshot")
+![Screenshot](https://github.com/elliotwoods/VVVV.External.StartupControl/raw/master/Screenshot.png "Screenshot")
 
 
 
